@@ -1,0 +1,18 @@
+[
+	{
+		"code": "character",
+		"name": "Character"
+	},
+	{
+		"code": "location",
+		"name": "Location"
+	},
+	{
+		"code": "plot",
+		"name": "Plot Twist"
+	},
+	{
+		"code": "equip",
+		"name": "Equipment"
+	}
+]

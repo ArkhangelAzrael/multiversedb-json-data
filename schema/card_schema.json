@@ -1,0 +1,179 @@
+{
+	"additionalProperties": true,
+	"dependencies": {
+		"name": [
+			"faction_code",
+			"type_code"
+		]
+	},
+	"properties": {
+		"affiliation": {
+			"oneOf": [
+				{
+					"minLength": 0,
+					"type": "string"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"attack": {
+			"oneOf": [
+				{
+					"minimum": 0,
+					"type": "integer"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"banned": {
+			"type": "boolean"
+		},
+		"code": {
+			"minLength": 1,
+			"type": "string"
+		},
+		"concealed": {
+			"oneOf": [
+				{
+					"enum": [
+						"yes",
+						"no",
+						"optional"
+					]
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"cost": {
+			"minimum": 0,
+			"type": "integer"
+		},
+		"deck_limit": {
+			"minimum": 4,
+			"type": "integer"
+		},
+		"defense": {
+			"oneOf": [
+				{
+					"minimum": 0,
+					"type": "integer"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"expansion_code": {
+			"maxLength": 10,
+			"minLength": 2,
+			"type": "string"
+		},
+		"fan_set": {
+			"type": "boolean"
+		},
+		"flavor": {
+			"oneOf": [
+				{
+					"minLength": 0,
+					"type": "string"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"flight": {
+			"oneOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"illustrator": {
+			"oneOf": [
+				{
+					"minLength": 0,
+					"type": "string"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"name": {
+			"minLength": 1,
+			"type": "string"
+		},
+		"position": {
+			"minimum": 1,
+			"type": "integer"
+		},
+		"range": {
+			"oneOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"rarity": {
+			"enum": [
+				"c",
+				"u",
+				"r"
+			]
+		},
+		"text": {
+			"minLength": 0,
+			"type": "string"
+		},
+		"traits": {
+			"oneOf": [
+				{
+					"minLength": 0,
+					"type": "string"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"type_code": {
+			"enum": [
+				"character",
+				"location",
+				"plot",
+				"equip"
+			]
+		},
+		"version": {
+			"oneOf": [
+				{
+					"minLength": 1,
+					"type": "string"
+				},
+				{
+					"type": "null"
+				}
+			]
+		}
+	},
+	"required": [
+		"code",
+		"pack_code",
+		"position",
+		"deck_limit"
+	],
+	"type": "object"
+}
