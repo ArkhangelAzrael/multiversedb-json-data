@@ -379,6 +379,7 @@
 		"position": 24,
 		"rarity": "R",
 		"text": "Insanity: Play rock, paper, scissors against an opponent. If you win, exhaust a character that opponent controls and play again. ",
+		"traits": "Insanity.",
 		"type": "plot"
 	},
 	{
@@ -392,7 +393,6 @@
 		"position": 25,
 		"rarity": "R",
 		"text": "Negate target recruit effect with cost 2 or less. ",
-		"traits": "Insanity.",
 		"type": "plot"
 	},
 	{
