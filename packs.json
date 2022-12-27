@@ -6,5 +6,13 @@
 		"name": "Batman Starter Deck",
 		"position": 1,
 		"size": 28
+	},
+	{
+		"code": "DCX",
+		"cycle_code": "DCL",
+		"date_release": "2007-12-01",
+		"name": "DC Exclusives",
+		"position": 1,
+		"size": 27
 	}
 ]

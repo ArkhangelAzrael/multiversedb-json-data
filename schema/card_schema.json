@@ -40,9 +40,9 @@
 			"oneOf": [
 				{
 					"enum": [
-						"yes",
-						"no",
-						"optional"
+						"Yes",
+						"No",
+						"Optional"
 					]
 				},
 				{
@@ -129,9 +129,9 @@
 		},
 		"rarity": {
 			"enum": [
-				"c",
-				"u",
-				"r"
+				"C",
+				"U",
+				"R"
 			]
 		},
 		"text": {
@@ -154,7 +154,9 @@
 				"character",
 				"location",
 				"plot",
-				"equip"
+				"equip",
+				"planet",
+				"ego"
 			]
 		},
 		"version": {

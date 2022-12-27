@@ -14,5 +14,13 @@
 	{
 		"code": "equip",
 		"name": "Equipment"
+	},
+	{
+		"code": "planet",
+		"name": "Planet"
+	},
+	{
+		"code": "ego",
+		"name": "Alter Ego"
 	}
 ]

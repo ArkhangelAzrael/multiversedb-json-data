@@ -4,5 +4,11 @@
 		"name": "DC Origins",
 		"position": 1,
 		"size": 1
+	},
+	{
+		"code": "DCL",
+		"name": "DC Comics Legends",
+		"position": 1,
+		"size": 1
 	}
 ]
