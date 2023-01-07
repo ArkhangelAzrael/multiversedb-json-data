@@ -169,6 +169,17 @@
 					"type": "null"
 				}
 			]
+		},
+		"willpower": {
+			"oneOf": [
+				{
+					"minimum": 0,
+					"type": "integer"
+				},
+				{
+					"type": "null"
+				}
+			]
 		}
 	},
 	"required": [

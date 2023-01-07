@@ -132,20 +132,10 @@ def load_types(args):
 
     return types_data
 
-def load_sides(args):
-    verbose_print(args, "Loading side index file...\n", 1)
-    sides_path = os.path.join(args.base_path, "sides.json")
-    sides_data = load_json_file(args, sides_path)
-
-    if not validate_sides(args, sides_data):
-        return None
-
-    return sides_data
-
 def parse_commandline():
-    argparser = argparse.ArgumentParser(description="Validate JSON in the netrunner cards repository.")
-    argparser.add_argument("-f", "--fix_formatting", default=False, action="store_true", help="write suggested formatting changes to files")
-    argparser.add_argument("-v", "--verbose", default=0, action="count", help="verbose mode")
+    argparser = argparse.ArgumentParser(description="Validate JSON in the cards repository.")
+    argparser.add_argument("-f", "--fix_formatting", default=True, action="store_true", help="write suggested formatting changes to files")
+    argparser.add_argument("-v", "--verbose", default=1, action="count", help="verbose mode")
     argparser.add_argument("-b", "--base_path", default=os.getcwd(), help="root directory of JSON repo (default: current directory)")
     argparser.add_argument("-p", "--pack_path", default=None, help=("pack directory of JSON repo (default: BASE_PATH/%s/)" % PACK_DIR))
     argparser.add_argument("-c", "--schema_path", default=None, help=("schema directory of JSON repo (default: BASE_PATH/%s/" % SCHEMA_DIR))
@@ -279,35 +269,6 @@ def validate_types(args, types_data):
         except jsonschema.ValidationError as e:
             verbose_print(args, "ERROR\n",2)
             verbose_print(args, "Validation error in type: (code: '%s' name: '%s')\n" % (c.get("code"), c.get("name")), 0)
-            validation_errors += 1
-            verbose_print(args, "%s\n" % e.message, 0)
-            retval = False
-
-    return retval
-
-def validate_sides(args, sides_data):
-    global validation_errors
-
-    verbose_print(args, "Validating side index file...\n", 1)
-    side_schema_path = os.path.join(args.schema_path, "side_schema.json")
-    SIDE_SCHEMA = load_json_file(args, side_schema_path)
-    if not isinstance(sides_data, list):
-        verbose_print(args, "Insides of side index file are not a list!\n", 0)
-        return False
-    if not SIDE_SCHEMA:
-        return False
-    if not check_json_schema(args, SIDE_SCHEMA, side_schema_path):
-        return False
-
-    retval = True
-    for c in sides_data:
-        try:
-            verbose_print(args, "Validating side %s... " % c.get("name"), 2)
-            jsonschema.validate(c, SIDE_SCHEMA)
-            verbose_print(args, "OK\n", 2)
-        except jsonschema.ValidationError as e:
-            verbose_print(args, "ERROR\n",2)
-            verbose_print(args, "Validation error in side: (code: '%s' name: '%s')\n" % (c.get("code"), c.get("name")), 0)
             validation_errors += 1
             verbose_print(args, "%s\n" % e.message, 0)
             retval = False

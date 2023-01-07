@@ -197,9 +197,10 @@
 		"range": true,
 		"rarity": "R",
 		"text": "Reservist|Willpower 4|Activate >>> Stun target character with cost 3 or less. Use only if you control four or fewer resources. ",
-		"traits": "Reservist. Willpower 4.",
+		"traits": "Reservist.",
 		"type": "character",
-		"version": "Hero with Attitude"
+		"version": "Hero with Attitude",
+		"willpower": 4
 	},
 	{
 		"affiliation": "Injustice Gang.",
