@@ -20,12 +20,6 @@ You can also just try to follow the style existing files use when editing entrie
 
 Required properties are in **bold**.
 
-#### Expansion schema
-
-* **code** - identifier of the expansion. One single lowercase word. Examples: `"base"`, `"inq"`, `"wz"`.
-* **name** - properly formatted name of the expansion. Examples: `"Base Set"`, `"Inquisition"`, `"Warzone"`.
-* **size** - number of cards in the expansion.
-
 #### Card schema
 
 TODO
